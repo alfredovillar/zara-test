@@ -14,7 +14,7 @@ public class KafkaListener {
 	@Bean
 	public Consumer<Message<ProductAvailablityEvent>> KafkaConsumer() {
 		return message -> {
-			// TODO: Insert code in this Consumer
+			System.out.println("kafka message "+message.getPayload());
 
 		};
 	}
