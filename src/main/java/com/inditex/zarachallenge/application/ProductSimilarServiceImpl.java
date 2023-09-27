@@ -1,7 +1,6 @@
 package com.inditex.zarachallenge.application;
 
 import com.inditex.zarachallenge.domain.Product;
-import com.inditex.zarachallenge.infrastructure.ProductRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

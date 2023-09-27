@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.mappers;
+package com.inditex.zarachallenge.infrastructure.mappers;
 
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;

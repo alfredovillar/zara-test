@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure;
+package com.inditex.zarachallenge.application;
 
 import com.inditex.zarachallenge.domain.Product;
 
