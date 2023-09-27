@@ -8,10 +8,12 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 public class Offer {
-    public Offer(Integer id) {
-        this.id=id;
-    }
-    private Integer id;
+
+    private Long id;
     private LocalDateTime validFrom;
     private Double price;
+    public Offer(Long id) {
+        this.id=id;
+    }
+
 }
