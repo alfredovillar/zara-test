@@ -1,9 +1,8 @@
-package com.inditex.zarachallenge.application;
+package com.inditex.zarachallenge.application.service;
 
-import com.inditex.zarachallenge.application.port.ProductRepository;
-import com.inditex.zarachallenge.domain.Product;
+import com.inditex.zarachallenge.application.port.out.ProductRepository;
+import com.inditex.zarachallenge.application.port.in.UpdateStockAvailabilityService;
 import com.inditex.zarachallenge.domain.ProductAvailability;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 

@@ -2,8 +2,8 @@ package com.inditex.zarachallenge.infrastructure;
 
 import java.util.function.Consumer;
 
-import com.inditex.zarachallenge.application.UpdateStockAvailabilityService;
-import com.inditex.zarachallenge.infrastructure.mappers.ProductMapper;
+import com.inditex.zarachallenge.application.port.in.UpdateStockAvailabilityService;
+import com.inditex.zarachallenge.mappers.ProductMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;

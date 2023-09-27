@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.application.port;
+package com.inditex.zarachallenge.application.port.out;
 
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;

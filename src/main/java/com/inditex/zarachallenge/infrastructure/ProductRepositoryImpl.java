@@ -1,18 +1,15 @@
 package com.inditex.zarachallenge.infrastructure;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
-import com.inditex.zarachallenge.application.port.ProductRepository;
+import com.inditex.zarachallenge.application.port.out.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;
-import com.inditex.zarachallenge.domain.Size;
 import com.inditex.zarachallenge.infrastructure.entities.ProductEntity;
-import com.inditex.zarachallenge.infrastructure.mappers.ProductMapper;
+import com.inditex.zarachallenge.mappers.ProductMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
