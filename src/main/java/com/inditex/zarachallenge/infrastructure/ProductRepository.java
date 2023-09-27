@@ -1,9 +1,10 @@
 package com.inditex.zarachallenge.infrastructure;
 
-import com.inditex.zarachallenge.infrastructure.entities.ProductEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.inditex.zarachallenge.domain.Product;
 
-@Repository
-public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
+import java.util.List;
+
+public interface ProductRepository {
+    List<Integer> getSimilarIdsByProduct(Integer productId);
+    Product getSimilarIdByProduct(Integer productId);
 }

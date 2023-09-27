@@ -14,10 +14,15 @@ import java.util.List;
 
 @RestController
 public class SimilarController {
-    @Autowired
-    ProductSimilarService productSimilarService;
+
+    private final ProductSimilarService productSimilarService;
+
+    public SimilarController(ProductSimilarService productSimilarService) {
+        this.productSimilarService = productSimilarService;
+    }
+
     @GetMapping("/product/{productId}/similarids")
-    public ResponseEntity<List<Integer>> getSimilards(@PathVariable String productId)  {
+    public ResponseEntity<List<Integer>> getSimilards(@PathVariable Integer productId)  {
             return ResponseEntity.ok(productSimilarService.getSimilarIds(productId));
 
     }
