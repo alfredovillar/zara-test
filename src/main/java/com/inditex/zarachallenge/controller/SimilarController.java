@@ -3,7 +3,6 @@ package com.inditex.zarachallenge.controller;
 import com.inditex.zarachallenge.application.ProductNotFoundException;
 import com.inditex.zarachallenge.application.ProductSimilarService;
 import com.inditex.zarachallenge.domain.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +20,13 @@ public class SimilarController {
         this.productSimilarService = productSimilarService;
     }
 
-    @GetMapping("/product/{productId}/similarids")
-    public ResponseEntity<List<Integer>> getSimilards(@PathVariable Integer productId)  {
+    @GetMapping("/product/{productId}/similards")
+    public ResponseEntity<List<Integer>> getSimilards(@PathVariable Long productId)  {
             return ResponseEntity.ok(productSimilarService.getSimilarIds(productId));
 
     }
-    @GetMapping("/product/{productId}/similarid")
-    public ResponseEntity<Product> getSimilarId(@PathVariable Integer productId)  {
+    @GetMapping("/product/{productId}/similar")
+    public ResponseEntity<Product> getSimilar(@PathVariable Long productId)  {
         try {
             return ResponseEntity.ok(productSimilarService.getSimilarId(productId));
         }

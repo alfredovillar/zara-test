@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 public class ProductEntity {
     @Id
-    private Integer id;
+    private Long id;
     private String name;
     @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     @JoinColumn(name="product_id")

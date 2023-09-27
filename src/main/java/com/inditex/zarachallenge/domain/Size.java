@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 public class Size {
-    private Integer id;
+    private Long id;
     private String size;
     private boolean availability;
     private LocalDateTime lastUpdated;

@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @Data
 public class OfferEntity {
     @Id
-    private Integer id;
+    private Long id;
     @Column(name="valid_from")
     private LocalDateTime validFrom;
     private Double price;
     @Column(name="product_id")
-    private Integer productId;
+    private Long productId;
 
 }

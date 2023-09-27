@@ -1,5 +1,6 @@
 package com.inditex.zarachallenge.application;
 
+import com.inditex.zarachallenge.application.port.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -14,12 +15,12 @@ private final ProductRepository productRepository;
     }
 
     @Override
-    public List<Integer> getSimilarIds(Integer productId) {
+    public List<Integer> getSimilarIds(Long productId) {
        return productRepository.getSimilarIdsByProduct(productId);
     }
 
     @Override
-    public Product getSimilarId(Integer productId) {
+    public Product getSimilarId(Long productId) {
        return productRepository.getSimilarIdByProduct(productId);
     }
 }

@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 @Data
 public class SizeEntity {
     @Id
-    private Integer id;
+    private Long id;
     private String size;
     private Boolean availability;
     @Column(name="last_updated")
     private LocalDateTime lastUpdated;
 
     @Column(name="product_id")
-    private Integer productId;
+    private Long productId;
 
 }

@@ -1,7 +1,7 @@
 package com.inditex.zarachallenge.infrastructure;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
-import com.inditex.zarachallenge.application.ProductRepository;
+import com.inditex.zarachallenge.application.port.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.infrastructure.entities.ProductEntity;
 import com.inditex.zarachallenge.infrastructure.mappers.ProductMapper;
@@ -25,6 +25,12 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product getSimilarIdByProduct(Integer productId) {
+        ProductEntity product= jpaProductRepository.findById(productId)
+                .orElseThrow(()->new ProductNotFoundException("Product not found exception"));
+        return mapper.toDomain(product);
+    }
+    @Override
+    public Product getProductAvailable(Integer productId) {
         ProductEntity product= jpaProductRepository.findById(productId)
                 .orElseThrow(()->new ProductNotFoundException("Product not found exception"));
         return mapper.toDomain(product);
