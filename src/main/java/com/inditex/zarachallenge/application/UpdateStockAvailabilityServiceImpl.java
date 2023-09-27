@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UpdateStockAvailabilityServiceImpl implements UpdateStockAvailabilityService {
-    @Value("{date}")
-    String today;
+
     private final ProductRepository productRepository;
 
     public UpdateStockAvailabilityServiceImpl(ProductRepository productRepository) {
@@ -19,16 +18,10 @@ public class UpdateStockAvailabilityServiceImpl implements UpdateStockAvailabili
 
     @Override
     public void updateAvailability(ProductAvailability productAvailability) {
-        Product product=productRepository.getProduct(productAvailability.getSkuId());
-        product.getSizes().stream().forEach(
-                size-> {
-                    if (size.getLastUpdated().isBefore(productAvailability.getUpdated())) {
-                        size.setAvailability(productAvailability.getAvailable());
-                        size.setLastUpdated(productAvailability.getUpdated());
-                    }
-                });
 
-        productRepository.updateAvailability(product);
+            productRepository.updateAvailability(productAvailability);
+
+
     }
 
 }

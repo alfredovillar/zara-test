@@ -2,12 +2,15 @@ package com.inditex.zarachallenge.application;
 
 import com.inditex.zarachallenge.application.port.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 public class ProductSimilarServiceImpl implements ProductSimilarService {
 private final ProductRepository productRepository;
+    @Value("{date}")
+    String today;
 
 
     public ProductSimilarServiceImpl(ProductRepository productRepository) {

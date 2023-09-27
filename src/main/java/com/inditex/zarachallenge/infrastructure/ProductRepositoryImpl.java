@@ -7,8 +7,10 @@ import com.inditex.zarachallenge.domain.ProductAvailability;
 import com.inditex.zarachallenge.domain.Size;
 import com.inditex.zarachallenge.infrastructure.entities.ProductEntity;
 import com.inditex.zarachallenge.infrastructure.mappers.ProductMapper;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,16 +35,9 @@ public class ProductRepositoryImpl implements ProductRepository {
                 .orElseThrow(()->new ProductNotFoundException("Product not found exception"));
         return mapper.toDomain(product);
     }
-    @Override
-    public Product getProduct(Long productId) {
-        ProductEntity product= jpaProductRepository.findById(productId)
-                .orElseThrow(()->new ProductNotFoundException("Product not found exception"));
-        return mapper.toDomain(product);
-    }
-
-
-    public void updateAvailability(Product product) {
-        jpaProductRepository.save(mapper.toEntity(product));
+@Transactional
+    public void updateAvailability(ProductAvailability productAvailability) {
+      jpaProductRepository.updateProductAvailability(productAvailability.getAvailable(),productAvailability.getSkuId(),productAvailability.getUpdated());
 
     }
 }
