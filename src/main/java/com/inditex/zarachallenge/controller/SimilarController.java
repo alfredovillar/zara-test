@@ -22,14 +22,14 @@ public class SimilarController {
     }
 
     @GetMapping("/product/{productId}/similarids")
-    public ResponseEntity<List<Integer>> getSimilards(@PathVariable Long productId)  {
-            return ResponseEntity.ok(productSimilarService.getSimilarIds(productId));
+    public ResponseEntity<List<Integer>> getSimilards(@PathVariable String productId)  {
+            return ResponseEntity.ok(productSimilarService.getSimilarIds(Long.valueOf(productId)));
 
     }
     @GetMapping("/product/{productId}/similar")
-    public ResponseEntity<ProductResponse> getSimilar(@PathVariable Long productId)  {
+    public ResponseEntity<ProductResponse> getSimilar(@PathVariable String productId)  {
         try {
-            return ResponseEntity.ok(productSimilarService.getSimilarId(productId));
+            return ResponseEntity.ok(productSimilarService.getSimilarId(Long.valueOf(productId)));
         }
         catch(ProductNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
