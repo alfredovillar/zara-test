@@ -101,5 +101,4 @@ public class ZaraInitialConfig implements CommandLineRunner {
 						LocalDateTime.parse(stock.get(2), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX"))))
 				.build();
 	}
-
 }
