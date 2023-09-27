@@ -17,7 +17,7 @@ public class ProductApiRestRepository  {
         this.restTemplate = restTemplate;
     }
 
-    public List<Integer> getSimilarIdsByProduct(Integer productId) {
+    public List<Integer> getSimilarIdsByProduct(Long productId) {
         ParameterizedTypeReference<List<Integer>> parameterizedTypeReference =
                 new ParameterizedTypeReference<>(){};
 

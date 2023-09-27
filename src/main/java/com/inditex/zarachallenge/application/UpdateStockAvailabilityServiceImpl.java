@@ -1,13 +1,11 @@
 package com.inditex.zarachallenge.application;
 
 import com.inditex.zarachallenge.application.port.ProductRepository;
+import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Service
 public class UpdateStockAvailabilityServiceImpl implements UpdateStockAvailabilityService {
@@ -21,12 +19,16 @@ public class UpdateStockAvailabilityServiceImpl implements UpdateStockAvailabili
 
     @Override
     public void updateAvailability(ProductAvailability productAvailability) {
-        LocalDateTime now=LocalDateTime.parse(today,
-                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX"));
-        Timestamp todayTime=Timestamp
-                .valueOf(now);
-        productRepository.getProductAvailable(productAvailability.getSkuId());
-        if()
+        Product product=productRepository.getProduct(productAvailability.getSkuId());
+        product.getSizes().stream().forEach(
+                size-> {
+                    if (size.getLastUpdated().isBefore(productAvailability.getUpdated())) {
+                        size.setAvailability(productAvailability.getAvailable());
+                        size.setLastUpdated(productAvailability.getUpdated());
+                    }
+                });
 
+        productRepository.updateAvailability(product);
     }
+
 }

@@ -4,7 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import shaded_package.org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="OFFER")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OfferEntity {
     @Id
     private Long id;
