@@ -13,6 +13,7 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
+
 # Node
 
 # Logs
@@ -229,3 +230,4 @@ node_modules/
 src/test/java/com/inditex/zarachallenge/http/HttpJsonDynamicUnitTest.java
 src/test/resources/testcases/http00.json
 #### Added by HackerRank ####
+.idea/
