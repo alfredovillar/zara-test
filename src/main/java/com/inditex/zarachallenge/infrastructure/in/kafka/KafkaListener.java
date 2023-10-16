@@ -25,7 +25,7 @@ public class KafkaListener {
 	public Consumer<Message<ProductAvailablityEvent>> KafkaConsumer() {
 
 		return message -> {
-			updateStockAvailabilityPort.updateAvailability(mapper.toProductAvailability(message.getPayload()));
+			updateStockAvailabilityPort.updateAvailability(mapper.toDomain(message.getPayload()));
 
 		};
 	}
