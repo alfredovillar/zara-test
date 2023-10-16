@@ -1,10 +1,12 @@
-package com.inditex.zarachallenge.infrastructure;
+package com.inditex.zarachallenge.infrastructure.repositories;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
-import com.inditex.zarachallenge.application.port.out.ProductRepository;
+import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;
-import com.inditex.zarachallenge.infrastructure.entities.ProductEntity;
+import com.inditex.zarachallenge.infrastructure.repositories.entities.ProductEntity;
+import com.inditex.zarachallenge.infrastructure.repositories.JpaProductRepository;
+import com.inditex.zarachallenge.infrastructure.repositories.RestApiClientProductRepository;
 import com.inditex.zarachallenge.mappers.ProductMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
@@ -13,17 +15,17 @@ import java.util.List;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
-    private final JpaProductRepository  jpaProductRepository;
-    private final ProductApiRestRepository productApiRestRepository;
+    private final JpaProductRepository jpaProductRepository;
+    private final RestApiClientProductRepository restApiClientProductRepository;
     private final ProductMapper mapper;
-    public ProductRepositoryImpl(JpaProductRepository jpaProductRepository, ProductApiRestRepository productApiRestRepository, ProductMapper mapper) {
+    public ProductRepositoryImpl(JpaProductRepository jpaProductRepository, RestApiClientProductRepository restApiClientProductRepository, ProductMapper mapper) {
         this.jpaProductRepository = jpaProductRepository;
-        this.productApiRestRepository = productApiRestRepository;
+        this.restApiClientProductRepository = restApiClientProductRepository;
         this.mapper = mapper;
     }
     @Override
     public List<Integer> getSimilarIdsByProduct(Long productId) {
-        return productApiRestRepository.getSimilarIdsByProduct(productId);
+        return restApiClientProductRepository.getSimilarIdsByProduct(productId);
     }
 
     @Override

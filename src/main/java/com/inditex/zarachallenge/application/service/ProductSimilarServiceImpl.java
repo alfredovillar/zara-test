@@ -1,8 +1,8 @@
 package com.inditex.zarachallenge.application.service;
 
-import com.inditex.zarachallenge.application.port.out.ProductRepository;
-import com.inditex.zarachallenge.application.port.in.ProductSimilarService;
-import com.inditex.zarachallenge.controller.dto.ProductResponse;
+import com.inditex.zarachallenge.application.ports.out.ProductRepository;
+import com.inditex.zarachallenge.application.ports.in.ProductSimilarService;
+import com.inditex.zarachallenge.infrastructure.rest.dto.ProductResponse;
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.mappers.ProductMapper;
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class ProductSimilarServiceImpl implements ProductSimilarService {

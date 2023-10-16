@@ -1,6 +1,5 @@
 package com.inditex.zarachallenge.application;
 
-import com.inditex.zarachallenge.domain.Product;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

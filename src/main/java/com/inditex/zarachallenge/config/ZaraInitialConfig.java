@@ -24,7 +24,7 @@ import org.springframework.messaging.support.GenericMessage;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.inditex.zarachallenge.infrastructure.KafkaListener;
+import com.inditex.zarachallenge.infrastructure.kafka.KafkaListener;
 import com.inditex.zarachallenge.infrastructure.model.ProductAvailablityEvent;
 
 import jakarta.annotation.PostConstruct;

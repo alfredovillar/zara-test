@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure.entities;
+package com.inditex.zarachallenge.infrastructure.repositories.entities;
 
 
 import jakarta.persistence.*;

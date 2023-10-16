@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure;
+package com.inditex.zarachallenge.infrastructure.repositories;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -9,11 +9,11 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Repository
-public class ProductApiRestRepository  {
+public class RestApiClientProductRepository {
 
     private final RestTemplate restTemplate;
 
-    public ProductApiRestRepository(RestTemplate restTemplate) {
+    public RestApiClientProductRepository(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

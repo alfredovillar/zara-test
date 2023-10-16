@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.controller.dto;
+package com.inditex.zarachallenge.infrastructure.rest.dto;
 
 import lombok.Data;
 

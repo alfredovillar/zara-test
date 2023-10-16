@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure.entities;
+package com.inditex.zarachallenge.infrastructure.repositories.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,7 +7,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shaded_package.org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
 
