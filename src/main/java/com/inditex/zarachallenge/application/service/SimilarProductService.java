@@ -4,7 +4,7 @@ import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.application.ports.in.SimilarProductPort;
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;
-import com.inditex.zarachallenge.mappers.ProductMapper;
+import com.inditex.zarachallenge.infrastructure.out.persistence.mappers.ProductMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

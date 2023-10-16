@@ -1,18 +1,17 @@
-package com.inditex.zarachallenge.mappers;
+package com.inditex.zarachallenge.infrastructure.out.persistence.mappers;
 
 import com.inditex.zarachallenge.infrastructure.in.rest.dto.ProductResponse;
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;
-import com.inditex.zarachallenge.domain.ProductAvailability;
 import com.inditex.zarachallenge.domain.Size;
 import com.inditex.zarachallenge.infrastructure.out.persistence.entities.ProductEntity;
-import com.inditex.zarachallenge.infrastructure.in.kafka.events.ProductAvailablityEvent;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Component
 public class ProductMapper {
     public Product toDomain(ProductEntity entity) {
         List<Offer> offers = new ArrayList<>();
@@ -33,20 +32,5 @@ public class ProductMapper {
         product.setOffers(offers);
         product.setSizes(sizes);
         return product;
-    }
-
-    public ProductAvailability toDomain(ProductAvailablityEvent event) {
-        return new ProductAvailability(event.getSkuId(), event.isAvailability(), event.getUpdate().toLocalDateTime());
-    }
-
-    public ProductResponse toDto(Product product) {
-        ProductResponse response = new ProductResponse();
-        response.setId(product.getId() + "");
-        response.setName(product.getName());
-        if (!product.getOffers().isEmpty())
-            response.setPrice(product.getOffers().get(0).getPrice());
-        if (!product.getSizes().isEmpty())
-            response.setAvailability(product.getSizes().get(0).isAvailability());
-        return response;
     }
 }

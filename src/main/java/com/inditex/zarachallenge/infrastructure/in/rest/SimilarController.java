@@ -3,7 +3,7 @@ package com.inditex.zarachallenge.infrastructure.in.rest;
 import com.inditex.zarachallenge.application.ProductNotFoundException;
 import com.inditex.zarachallenge.application.ports.in.SimilarProductPort;
 import com.inditex.zarachallenge.infrastructure.in.rest.dto.ProductResponse;
-import com.inditex.zarachallenge.mappers.ProductMapper;
+import com.inditex.zarachallenge.infrastructure.in.rest.mappers.ProductResponseMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +16,9 @@ import java.util.List;
 public class SimilarController {
 
     private final SimilarProductPort similarProductPort;
-    private final ProductMapper mapper;
+    private final ProductResponseMapper mapper;
 
-    public SimilarController(SimilarProductPort similarProductPort, ProductMapper mapper) {
+    public SimilarController(SimilarProductPort similarProductPort, ProductResponseMapper mapper) {
         this.similarProductPort = similarProductPort;
         this.mapper=mapper;
     }
