@@ -1,7 +1,7 @@
 package com.inditex.zarachallenge.application.service;
 
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
-import com.inditex.zarachallenge.application.ports.in.ProductSimilarPort;
+import com.inditex.zarachallenge.application.ports.in.SimilarProductPort;
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.mappers.ProductMapper;
@@ -13,14 +13,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
-public class ProductSimilarService implements ProductSimilarPort {
+public class SimilarProductService implements SimilarProductPort {
     private final ProductRepository productRepository;
     @Value("${date}")
     String today;
 
 
 
-    public ProductSimilarService(ProductRepository productRepository, ProductMapper mapper) {
+    public SimilarProductService(ProductRepository productRepository, ProductMapper mapper) {
         this.productRepository = productRepository;
     }
 

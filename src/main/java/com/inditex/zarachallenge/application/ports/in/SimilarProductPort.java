@@ -5,7 +5,7 @@ import com.inditex.zarachallenge.domain.Product;
 
 import java.util.List;
 
-public interface ProductSimilarPort {
+public interface SimilarProductPort {
     List<Integer> getSimilarIds(Long productId);
     Product getSimilarId(Long productId);
 }
