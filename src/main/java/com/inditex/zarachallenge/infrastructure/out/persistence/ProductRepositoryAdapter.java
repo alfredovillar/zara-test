@@ -3,7 +3,7 @@ package com.inditex.zarachallenge.infrastructure.out.persistence;
 import com.inditex.zarachallenge.application.ProductNotFoundException;
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
-import com.inditex.zarachallenge.domain.ProductAvailability;
+import com.inditex.zarachallenge.application.ports.in.ProductAvailability;
 import com.inditex.zarachallenge.infrastructure.out.persistence.entities.ProductEntity;
 import com.inditex.zarachallenge.infrastructure.out.persistence.mappers.ProductMapper;
 import jakarta.transaction.Transactional;

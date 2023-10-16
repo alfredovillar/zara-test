@@ -1,7 +1,7 @@
 package com.inditex.zarachallenge.application.ports.out;
 
 import com.inditex.zarachallenge.domain.Product;
-import com.inditex.zarachallenge.domain.ProductAvailability;
+import com.inditex.zarachallenge.application.ports.in.ProductAvailability;
 
 import java.util.List;
 

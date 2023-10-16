@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.domain;
+package com.inditex.zarachallenge.application.ports.in;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

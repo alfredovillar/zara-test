@@ -2,7 +2,7 @@ package com.inditex.zarachallenge.application.service;
 
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityPort;
-import com.inditex.zarachallenge.domain.ProductAvailability;
+import com.inditex.zarachallenge.application.ports.in.ProductAvailability;
 import org.springframework.stereotype.Service;
 
 
