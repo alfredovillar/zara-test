@@ -12,11 +12,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ProductRepositoryImpl implements ProductRepository {
+public class ProductRepositoryAdapter implements ProductRepository {
     private final JpaProductRepository jpaProductRepository;
     private final RestApiClientProductRepository restApiClientProductRepository;
     private final ProductMapper mapper;
-    public ProductRepositoryImpl(JpaProductRepository jpaProductRepository, RestApiClientProductRepository restApiClientProductRepository, ProductMapper mapper) {
+    public ProductRepositoryAdapter(JpaProductRepository jpaProductRepository, RestApiClientProductRepository restApiClientProductRepository, ProductMapper mapper) {
         this.jpaProductRepository = jpaProductRepository;
         this.restApiClientProductRepository = restApiClientProductRepository;
         this.mapper = mapper;
