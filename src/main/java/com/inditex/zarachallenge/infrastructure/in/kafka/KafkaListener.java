@@ -2,7 +2,7 @@ package com.inditex.zarachallenge.infrastructure.in.kafka;
 
 import java.util.function.Consumer;
 
-import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityService;
+import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityPort;
 import com.inditex.zarachallenge.mappers.ProductMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
@@ -13,11 +13,11 @@ import com.inditex.zarachallenge.infrastructure.in.kafka.events.ProductAvailabli
 @Component
 public class KafkaListener {
 
-	private final UpdateStockAvailabilityService updateStockAvailabilityService;
+	private final UpdateStockAvailabilityPort updateStockAvailabilityPort;
 	private final ProductMapper mapper;
-	public KafkaListener(UpdateStockAvailabilityService updateStockAvailabilityService,
+	public KafkaListener(UpdateStockAvailabilityPort updateStockAvailabilityPort,
 						 ProductMapper mapper) {
-		this.updateStockAvailabilityService = updateStockAvailabilityService;
+		this.updateStockAvailabilityPort = updateStockAvailabilityPort;
 		this.mapper=mapper;
 	}
 
@@ -25,7 +25,7 @@ public class KafkaListener {
 	public Consumer<Message<ProductAvailablityEvent>> KafkaConsumer() {
 
 		return message -> {
-			updateStockAvailabilityService.updateAvailability(mapper.toDomain(message.getPayload()));
+			updateStockAvailabilityPort.updateAvailability(mapper.toDomain(message.getPayload()));
 
 		};
 	}

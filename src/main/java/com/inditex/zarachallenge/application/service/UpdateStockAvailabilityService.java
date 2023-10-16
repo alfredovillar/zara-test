@@ -1,17 +1,17 @@
 package com.inditex.zarachallenge.application.service;
 
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
-import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityService;
+import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityPort;
 import com.inditex.zarachallenge.domain.ProductAvailability;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class UpdateStockAvailabilityServiceImpl implements UpdateStockAvailabilityService {
+public class UpdateStockAvailabilityService implements UpdateStockAvailabilityPort {
 
     private final ProductRepository productRepository;
 
-    public UpdateStockAvailabilityServiceImpl(ProductRepository productRepository) {
+    public UpdateStockAvailabilityService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

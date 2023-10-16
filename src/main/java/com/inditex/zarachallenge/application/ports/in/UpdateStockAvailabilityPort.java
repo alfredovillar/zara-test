@@ -4,6 +4,6 @@ import com.inditex.zarachallenge.domain.ProductAvailability;
 
 
 
-public interface UpdateStockAvailabilityService {
+public interface UpdateStockAvailabilityPort {
     void updateAvailability(ProductAvailability productAvailability);
 }
