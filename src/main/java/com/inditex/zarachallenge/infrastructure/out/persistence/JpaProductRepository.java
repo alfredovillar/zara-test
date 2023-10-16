@@ -1,6 +1,6 @@
-package com.inditex.zarachallenge.infrastructure.repositories;
+package com.inditex.zarachallenge.infrastructure.out.persistence;
 
-import com.inditex.zarachallenge.infrastructure.repositories.entities.ProductEntity;
+import com.inditex.zarachallenge.infrastructure.out.persistence.entities.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

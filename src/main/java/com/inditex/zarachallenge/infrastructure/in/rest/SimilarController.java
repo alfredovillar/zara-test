@@ -1,8 +1,8 @@
-package com.inditex.zarachallenge.infrastructure.rest;
+package com.inditex.zarachallenge.infrastructure.in.rest;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
 import com.inditex.zarachallenge.application.ports.in.ProductSimilarService;
-import com.inditex.zarachallenge.infrastructure.rest.dto.ProductResponse;
+import com.inditex.zarachallenge.infrastructure.in.rest.dto.ProductResponse;
 import com.inditex.zarachallenge.mappers.ProductMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

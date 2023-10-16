@@ -1,12 +1,10 @@
-package com.inditex.zarachallenge.infrastructure.repositories;
+package com.inditex.zarachallenge.infrastructure.out.persistence;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;
-import com.inditex.zarachallenge.infrastructure.repositories.entities.ProductEntity;
-import com.inditex.zarachallenge.infrastructure.repositories.JpaProductRepository;
-import com.inditex.zarachallenge.infrastructure.repositories.RestApiClientProductRepository;
+import com.inditex.zarachallenge.infrastructure.out.persistence.entities.ProductEntity;
 import com.inditex.zarachallenge.mappers.ProductMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;

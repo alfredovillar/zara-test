@@ -1,12 +1,12 @@
 package com.inditex.zarachallenge.mappers;
 
-import com.inditex.zarachallenge.infrastructure.rest.dto.ProductResponse;
+import com.inditex.zarachallenge.infrastructure.in.rest.dto.ProductResponse;
 import com.inditex.zarachallenge.domain.Offer;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.domain.ProductAvailability;
 import com.inditex.zarachallenge.domain.Size;
-import com.inditex.zarachallenge.infrastructure.repositories.entities.ProductEntity;
-import com.inditex.zarachallenge.infrastructure.model.ProductAvailablityEvent;
+import com.inditex.zarachallenge.infrastructure.out.persistence.entities.ProductEntity;
+import com.inditex.zarachallenge.infrastructure.in.kafka.events.ProductAvailablityEvent;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

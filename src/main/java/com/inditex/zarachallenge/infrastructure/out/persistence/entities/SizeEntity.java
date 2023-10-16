@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure.repositories.entities;
+package com.inditex.zarachallenge.infrastructure.out.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,16 +11,18 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="OFFER")
+@Table(name="SIZE")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OfferEntity {
+public class SizeEntity {
     @Id
     private Long id;
-    @Column(name="valid_from")
-    private LocalDateTime validFrom;
-    private Double price;
+    private String size;
+    private Boolean availability;
+    @Column(name="last_updated")
+    private LocalDateTime lastUpdated;
+
     @Column(name="product_id")
     private Long productId;
 

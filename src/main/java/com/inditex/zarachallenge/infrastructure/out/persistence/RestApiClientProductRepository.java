@@ -1,4 +1,4 @@
-package com.inditex.zarachallenge.infrastructure.repositories;
+package com.inditex.zarachallenge.infrastructure.out.persistence;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
