@@ -9,5 +9,5 @@ public interface ProductRepository {
     List<Integer> getSimilarIdsByProduct(Long productId);
     Product getSimilarIdByProduct(Long productId);
 
-    void updateAvailability(ProductAvailability availability);
+
 }

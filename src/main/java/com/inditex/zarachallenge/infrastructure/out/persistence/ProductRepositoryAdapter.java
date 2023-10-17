@@ -1,6 +1,7 @@
 package com.inditex.zarachallenge.infrastructure.out.persistence;
 
 import com.inditex.zarachallenge.application.ProductNotFoundException;
+import com.inditex.zarachallenge.application.ports.out.ProductAvailabilityRepository;
 import com.inditex.zarachallenge.application.ports.out.ProductRepository;
 import com.inditex.zarachallenge.domain.Product;
 import com.inditex.zarachallenge.application.ports.in.ProductAvailability;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ProductRepositoryAdapter implements ProductRepository {
+public class ProductRepositoryAdapter implements ProductRepository, ProductAvailabilityRepository {
     private final JpaProductRepository jpaProductRepository;
     private final RestApiClientProductRepository restApiClientProductRepository;
     private final ProductMapper mapper;
@@ -33,6 +34,7 @@ public class ProductRepositoryAdapter implements ProductRepository {
         return mapper.toDomain(product);
     }
 @Transactional
+@Override
     public void updateAvailability(ProductAvailability productAvailability) {
       jpaProductRepository.updateProductAvailability(productAvailability.getAvailable(),productAvailability.getSkuId(),productAvailability.getUpdated());
 
