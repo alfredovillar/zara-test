@@ -1,7 +1,6 @@
 package com.inditex.zarachallenge.application.service;
 
-import com.inditex.zarachallenge.application.ports.out.ProductAvailabilityRepository;
-import com.inditex.zarachallenge.application.ports.out.ProductRepository;
+import com.inditex.zarachallenge.application.ports.out.UpdateProductAvailabilityRepository;
 import com.inditex.zarachallenge.application.ports.in.UpdateStockAvailabilityPort;
 import com.inditex.zarachallenge.application.ports.in.ProductAvailability;
 import org.springframework.stereotype.Service;
@@ -10,16 +9,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class UpdateStockAvailabilityService implements UpdateStockAvailabilityPort {
 
-    private final ProductAvailabilityRepository productAvailabilityRepository;
+    private final UpdateProductAvailabilityRepository updateProductAvailabilityRepository;
 
-    public UpdateStockAvailabilityService(ProductAvailabilityRepository productAvailabilityRepository) {
-        this.productAvailabilityRepository = productAvailabilityRepository;
+    public UpdateStockAvailabilityService(UpdateProductAvailabilityRepository updateProductAvailabilityRepository) {
+        this.updateProductAvailabilityRepository = updateProductAvailabilityRepository;
     }
 
     @Override
     public void updateAvailability(ProductAvailability productAvailability) {
 
-            productAvailabilityRepository.updateAvailability(productAvailability);
+            updateProductAvailabilityRepository.updateAvailability(productAvailability);
 
 
     }
